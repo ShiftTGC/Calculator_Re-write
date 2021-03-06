@@ -2,21 +2,21 @@ package Calculator.ShiftTGC;
 
 import java.util.Scanner;
 
-//Class > Functions/Methods > objects & variables (self-note)
-//I will make this Java 8 compatible. Cuz a friend said that is the best to do due to compatibility
+//Class > Functions/Methods > objects & variables (self-note).
+//I will make this Java 8 compatible. Cuz a friend said that is the best to do due to compatibility.
 public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); //Makes a new Scanner object. Allows user to write.
 
-        println(" ------------------------------");
-        println("| Shift's Calculator - v2.2.3 |");
-        println(" ------------------------------");
+        println(" -------------------------------");
+        println("| Shift's Calculator - v2.2.12 |");
+        println(" -------------------------------");
         println("");
 
         loop:
-        while (true) {
-            try //meant to help catch any
+        while (true) { //Makes a loop
+            try //meant to help catch any errors
             {
 
                 print("Input value x: ");
@@ -34,24 +34,29 @@ public class Main {
                 println(x + symbol + y + "=" + math(symbol, x, y));
                 println("");
 
-                print("Want to exit? (Y/N): ");
-                String exit = input.next();
-
                 /*
                 exit - variable
                 .equalsIgnoreCase - Function - Tells it to ignore if it is a big y or a small Y
                  */
-                while (true) {
-                    if (exit.equalsIgnoreCase("y"))
-                    {
+                while (true) { //Starts another loop
+                    try {
+                        print("Want to exit? (Y/N): ");
+                        String exit = input.next();
+
+                        if (exit.equalsIgnoreCase("y")) {
+                            println("");
+                            println("Have a nice day/night!");
+                            break loop;
+                        } else if (exit.equalsIgnoreCase("n")) {
+                            println("Resetting calculator");
+                            println("");
+                            break;
+                        } else throw new Exception("User Didn't answer Y or N");
+                    } catch (Exception e) {
+                        println("ERROR:");
+                        println(e.toString());
                         println("");
-                        println("Have a nice day/night!");
-                        break loop;
                     }
-                    else if (exit.equalsIgnoreCase("n")) {
-                        println("Resetting calculator");
-                        println("");
-                    } else throw new Exception("User Didn't answer Y or N");
 
                 }
 
@@ -61,8 +66,11 @@ public class Main {
                 println("ERROR");
                 println("x and y can only be integers (between -2.147.483.648 to 2.147.483.648)");
                 println("Symbols can only be:");
-                println("+ - Addition");
-                println("\"-\"");
+                println("\"+\" - Addition");
+                println("\"-\" - Subtract");
+                println("\"*\" - Multiply");
+                println("\"/\" - Divide");
+                println("\"%\" - Modulo");
             }
         }
     }
