@@ -28,7 +28,7 @@ public class Main {
         Scanner input = new Scanner(System.in); //Makes a new Scanner object. Allows user to write.
 
         println(" -------------------------------");
-        println("| Shift's Calculator - v2.2.13 |");
+        println("| Shift's Calculator - v2.2.14 |");
         println(" -------------------------------");
         println("");
 
@@ -64,6 +64,7 @@ public class Main {
                         if (exit.equalsIgnoreCase("y")) {
                             println("");
                             println("Have a nice day/night!");
+                            input.close();
                             break loop;
                         } else if (exit.equalsIgnoreCase("n")) {
                             println("Resetting calculator");
