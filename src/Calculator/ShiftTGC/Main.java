@@ -28,7 +28,7 @@ public class Main {
         Scanner input = new Scanner(System.in); //Makes a new Scanner object. Allows user to write.
 
         println(" -------------------------------");
-        println("| Shift's Calculator - v2.2.14 |");
+        println("| Shift's Calculator - v2.2.15 |");
         println(" -------------------------------");
         println("");
 
@@ -38,7 +38,7 @@ public class Main {
             {
 
                 print("Input value x: ");
-                int x = input.nextInt(); //Stores user input into variable "x"
+                double x = input.nextDouble(); //Stores user input into variable "x"
 //            println(""); //Skips to next line so things won't be connected.
 
                 print("Input symbol: ");
@@ -46,7 +46,7 @@ public class Main {
 //            println("");
 
                 print("Input value y: ");
-                int y = input.nextInt(); //Stores user input into variable "y"
+                double y = input.nextDouble(); //Stores user input into variable "y"
 //            println("");
 
                 println(x + symbol + y + "=" + math(symbol, x, y));
@@ -95,7 +95,7 @@ public class Main {
     }
 
 
-    private static int math(String symbol, int x, int y) throws Exception {
+    private static double math(String symbol, double x, double y) throws Exception {
         switch (symbol) {
             case "+":
                 return x + y;
