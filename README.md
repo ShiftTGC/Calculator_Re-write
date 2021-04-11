@@ -1,5 +1,5 @@
 # Calculator_Re-write
-A rewrite of a Java-based Calculator I wrote with help from RexTheCapt. This time, I write it solo.
+A rewrite of a Java-based Calculator I wrote with help from [@RexTheCapt](https://github.com/RexTheCapt). This time, I write it solo.
 
 A basic Java Command Prompt based calculator. Cuz why not?
 (Requires Java 8 or higher)
